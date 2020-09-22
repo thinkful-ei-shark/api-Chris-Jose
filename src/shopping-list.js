@@ -1,7 +1,10 @@
 import $ from 'jquery';
 import store from './store';
 import api from './api';
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8e39f40a9d6ea7208ee9234174ad9f8bd5804ee3
 
 const generateItemElement = function (item) {
   let itemTitle = `<span class="shopping-item shopping-item__checked">${item.name}</span>`;
@@ -51,13 +54,23 @@ const handleNewItemSubmit = function () {
     event.preventDefault();
     const newItemName = $('.js-shopping-list-entry').val();
     $('.js-shopping-list-entry').val('');
+<<<<<<< HEAD
    
+=======
+    
+>>>>>>> 8e39f40a9d6ea7208ee9234174ad9f8bd5804ee3
     api.createItem(newItemName)
       .then(res => res.json())
       .then((newItem) => {
         store.addItem(newItem);
         render();
       });
+<<<<<<< HEAD
+=======
+
+    // store.addItem(newItemName);
+    // render();
+>>>>>>> 8e39f40a9d6ea7208ee9234174ad9f8bd5804ee3
   });
 };
 
@@ -84,6 +97,10 @@ const handleEditShoppingItemSubmit = function () {
     event.preventDefault();
     const id = getItemIdFromElement(event.currentTarget);
     const itemName = $(event.currentTarget).find('.shopping-item').val();
+<<<<<<< HEAD
+=======
+    // store.findAndUpdateName(id, itemName);
+>>>>>>> 8e39f40a9d6ea7208ee9234174ad9f8bd5804ee3
     render();
   });
 };
@@ -91,6 +108,10 @@ const handleEditShoppingItemSubmit = function () {
 const handleItemCheckClicked = function () {
   $('.js-shopping-list').on('click', '.js-item-toggle', event => {
     const id = getItemIdFromElement(event.currentTarget);
+<<<<<<< HEAD
+=======
+    // store.findAndToggleChecked(id);
+>>>>>>> 8e39f40a9d6ea7208ee9234174ad9f8bd5804ee3
     render();
   });
 };
